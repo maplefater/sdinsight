@@ -89,14 +89,23 @@ int MMCutils::nword_to_int(const std::vector<uint8_t> &data, int offset,
     return ((data[offset + 3] << 24) | (data[offset + 2] << 16) |
             (data[offset + 1] << 8) | data[offset]);
   } else if (size == 8) {
-    return (((long long)data[offset + 3] << 56) |
-            ((long long)data[offset + 3] << 48) |
-            ((long long)data[offset + 3] << 40) |
-            ((long long)data[offset + 3] << 32) |
+    return (((long long)data[offset + 7] << 56) |
+            ((long long)data[offset + 6] << 48) |
+            ((long long)data[offset + 5] << 40) |
+            ((long long)data[offset + 4] << 32) |
             ((long long)data[offset + 3] << 24) |
             ((long long)data[offset + 2] << 16) |
             ((long long)data[offset + 1] << 8) | (long long)data[offset]);
   } else {
     return -1;
   }
+}
+int64_t MMCutils::nword_to_int64(const std::vector<uint8_t> &data, int offset) {
+    return (((int64_t)data[offset + 7] << 56) |
+            ((int64_t)data[offset + 6] << 48) |
+            ((int64_t)data[offset + 5] << 40) |
+            ((int64_t)data[offset + 4] << 32) |
+            ((int64_t)data[offset + 3] << 24) |
+            ((int64_t)data[offset + 2] << 16) |
+            ((int64_t)data[offset + 1] << 8) | (int64_t)data[offset]);
 }

@@ -3,7 +3,7 @@
 bool SmartReaderSandisk::readSmart(MMCutils &mmc_utils) {
   auto data_in = mmc_utils.CMD56_read(0x1);
   if (data_in[0] == 0x44 && (data_in[1] == 0x53 || data_in[1] == 0x57)) {
-    printf("SanDisk: true\n");
+    printf("Device model: Sandisk Industrial\n");
   } else {
     return false;
   }

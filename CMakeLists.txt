@@ -18,3 +18,4 @@ file(GLOB src_files
 
 add_executable(sdinsight ${src_files})
 target_include_directories(sdinsight PRIVATE third_party src/)
+target_link_options(sdinsight PRIVATE -static-libgcc -static-libstdc++ -static)

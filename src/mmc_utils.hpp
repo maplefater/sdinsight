@@ -24,6 +24,7 @@ public:
                    unsigned char byte3, unsigned char byte4);
 
   int nword_to_int(const std::vector<uint8_t> &data, int offset, int size);
+  int64_t nword_to_int64(const std::vector<uint8_t> &data, int offset);
 
 private:
   int m_fd = -1;

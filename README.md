@@ -10,7 +10,20 @@ Tested on:
 
 ## Build
 
-todo
+Install build dependences:
+
+```bash
+sudo apt install build-essential cmake gcc gdb g++ ninja-build
+```
+
+Build:
+
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build . -j 4
+```
 
 ## Usage
 

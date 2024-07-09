@@ -16,6 +16,7 @@ int main(int argc, char *argv[]) {
     device = argv[1];
   }
   MMCutils mmc_utils(device);
+  std::cout << "====================SMART info====================" << std::endl;
   readSmart(mmc_utils);
   return 0;
 }
