@@ -1,10 +1,10 @@
 # sdinsight
 
-Just another SD/TF Card CID & SMART reader.
+Just another SD/TF card CID & SMART reader.
 
 `/dev/mmcblk0` device is **required** .
 
-Support Card Type:
+SMART supported card type:
 
 * AData
 * AData by Transcend
@@ -43,7 +43,7 @@ cmake --build . -j 4
 ## Usage
 
 ```bash
-# default device /dev/mmcblk0 is used
+# /dev/mmcblk0 is used
 sudo ./sdinsight
 ```
 
