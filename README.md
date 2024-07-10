@@ -34,6 +34,94 @@ cmake --build . -j 4
 sudo ./sdinsight
 ```
 
+## Examples
+
+### Hikvision longsys MPS
+
+```
+/dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:59b4"
+====================CID info====================
+manufacturer: Hikvision [0x9C]
+OEM ID: SO
+product: USD00
+hwrev: 4
+fwrev: 8
+serial: 0x65a91e7d
+manufacturing date: 2019/9
+====================SMART info====================
+Device model: longsys MPS
+Version: 2
+Size of SMART: 60
+Initial Bad Block Count: 25
+Increase Bad Block Count: 0
+Amount of Data Written: 16918.767699 GB 
+Number of Reserved Blocks: 8
+Total Erase Count:: 202750
+Total Sector Count: 493056000
+Remaining Lifetime: 93%
+Remaining data write amount: 744767 GB
+Flash Endurance: 3000 P/E
+Amount of Data Written to Flash: 53982 GB
+```
+
+### Sandisk Industrial
+
+```
+/dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:aaaa"
+====================CID info====================
+manufacturer: SanDisk
+OEM ID: SD
+product: SA08G
+hwrev: 8
+fwrev: 0
+serial: 0xc5773cd0
+manufacturing date: 2018/10
+====================SMART info====================
+Device model: Sandisk
+Manufacture date(YYMMDD): 181025
+Health Status Percent Used: 1
+Feature Revision: 0x1f
+Generation Identifier: 5
+Programmable Product String: SanDisk                         
+Power-on times: 59
+Product number: C1f30p       SDSA08G
+SN: C5 77 3C D0 01 2A
+```
+
+### Sandisk UHS-II(maybe fake?)
+
+```
+/dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:0007"
+====================CID info====================
+manufacturer: SanDisk [0x03]
+OEM ID: PT
+product: SP2BN
+hwrev: 3
+fwrev: 0
+serial: 0xdad8524a
+manufacturing date: 2016/10
+====================SMART info====================
+Device model: Apacer
+Flash Id: [0x98,0x3a,0x95,0x93,0x7a,0x51,0x08,0x04,0x04]
+IC Version: [0x1f,0x64]
+FW Version: [36,05]
+CE Number: 4
+Bad Block Replace Maximum:: 46
+Spare Block Count: 46
+Initial Bad Block Count: 134
+Good Block Rate: 99.22%
+Total Erase Count: 10121
+Remain Life: 99.84%
+Average Erase Count: 5
+Minimum Erase Count: 1
+Maximum Erase Count: 13
+Power Up Count: 50
+Abnormal Power Off Count: 0
+Total Refresh Count: 0
+Product Marker: 
+Later Bad Block Count: 0
+```
+
 
 ## Thanks
 
