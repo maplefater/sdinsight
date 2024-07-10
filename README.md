@@ -1,12 +1,25 @@
 # sdinsight
 
-Just another SD/TF Cards CID & SMART reader.
+Just another SD/TF Card CID & SMART reader.
 
 `/dev/mmcblk0` device is **required** .
+
+Support Card Type:
+
+* AData
+* AData by Transcend
+* Apacer
+* Sandisk
+* Longsys M9H
+* Longsys MPS
+* Micron
+* Swissbit
+* Transcend
 
 Tested on:
 
 * raspberry pi 5 with Ubuntu 24.04
+
 
 ## Build
 
