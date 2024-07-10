@@ -8,15 +8,15 @@
 #include <string>
 #include <sys/ioctl.h>
 
+#include <filesystem>
 #include <vector>
-
 class MMCutils {
 private:
   static const int SD_BLOCK_SIZE = 512;
 
 public:
-  MMCutils(std::string dev_path);
-  std::vector<uint8_t> getCid();
+  MMCutils();
+  void printCid();
   std::vector<uint8_t> CMD56_read(int arg);
 
   int CMD56_write(int arg);
@@ -28,6 +28,7 @@ public:
 
 private:
   int m_fd = -1;
+  std::filesystem::path m_bus_folder;
 };
 
 #endif // SRC_MMC_UTILS_HPP

@@ -10,6 +10,8 @@ Tested on:
 
 ## Build
 
+**C++23 required.**
+
 Install build dependences:
 
 ```bash

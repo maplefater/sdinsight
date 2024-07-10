@@ -27,7 +27,7 @@ bool SmartReaderSandisk::readSmart(MMCutils &mmc_utils) {
   printf("Generation Identifier: %d\n", data_in[14]);
   strncpy(tmpstr, (char *)&data_in[49], 32);
   tmpstr[32] = 0;
-  printf("Programmable Product String: %s\n", tmpstr);
+  printf("Product String: %s\n", tmpstr);
   printf("Power-on times: %d\n",
          mmc_utils.bytes_to_int(0, data_in[24], data_in[25], data_in[26]));
   data_in[417] = 0x20;
