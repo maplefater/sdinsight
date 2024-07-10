@@ -46,4 +46,6 @@ https://github.com/Ognian/sdmon
 
 https://github.com/CTCaer/hekate
 
+https://github.com/transcend-information/RaspberryPi_NVIDIAJetson-SDcard-SMARTQuery
+
 特别感谢 `hhdjz13813` 在开发过程中提供的帮助。

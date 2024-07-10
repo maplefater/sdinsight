@@ -3,7 +3,7 @@
 bool SmartReaderLongsysMPS::readSmart(MMCutils &mmc_utils) {
   auto data_in = mmc_utils.CMD56_read(0x1);
   if (data_in[0] == 0x70 && data_in[1] == 0x58) {
-    printf("Device model: FORESEE Industrial MPS\n");
+    printf("Device model: longsys MPS\n");
     printf("Version: %d\n", mmc_utils.nword_to_int(data_in, 4, 4));
     printf("Size of SMART: %d\n", mmc_utils.nword_to_int(data_in, 12, 4));
     printf("Initial Bad Block Count: %d\n",
