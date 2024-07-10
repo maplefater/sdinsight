@@ -166,6 +166,8 @@ static std::string get_manufacturer(int manid, char *oemid) {
     return "Transcend";
   case 0x1F:
     return "Kingston";
+  case 0x22:
+    return "Dahua";
   case 0x27:
     return "Delkin/Phison";
   case 0x28:
