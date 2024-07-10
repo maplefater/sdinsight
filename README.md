@@ -1,8 +1,8 @@
 # sdinsight
 
-Just another industrial grade SD Cards SMART reader.
+Just another SD/TF Cards CID & SMART reader.
 
-`/dev/mmcblkX` device is **required** .
+`/dev/mmcblk0` device is **required** .
 
 Tested on:
 
@@ -30,8 +30,7 @@ cmake --build . -j 4
 ## Usage
 
 ```bash
-sudo ./sdinsight /dev/mmcblkX
-# or use default device /dev/mmcblk0
+# default device /dev/mmcblk0 is used
 sudo ./sdinsight
 ```
 
@@ -49,5 +48,7 @@ https://github.com/Ognian/sdmon
 https://github.com/CTCaer/hekate
 
 https://github.com/transcend-information/RaspberryPi_NVIDIAJetson-SDcard-SMARTQuery
+
+https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git
 
 特别感谢 `hhdjz13813` 在开发过程中提供的帮助。
