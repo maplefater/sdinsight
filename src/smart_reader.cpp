@@ -9,6 +9,7 @@
 #include "smart_reader_adata.hpp"
 #include "smart_reader_swissbit.hpp"
 #include "smart_reader_transcend.hpp"
+#include "smart_reader_atp.hpp"
 template <typename T>
 concept isSmartReader = requires(T t, MMCutils mmc_utils) {
   { T::readSmart(mmc_utils) } -> std::convertible_to<bool>;
@@ -36,5 +37,6 @@ bool readSmart(MMCutils &mmc_utils) {
                        SmartReaderSwissbit,
                        SmartReaderAdataByTranscend,
                        SmartReaderLongsysM9H,
+                       SmartReaderATP,
                        SmartReaderApacer /* should be last one, to reduce execution time */>{}(mmc_utils);
 }

@@ -6,15 +6,18 @@ Just another SD/TF card CID & SMART reader.
 
 SMART supported card type:
 
-* AData
-* AData by Transcend
-* Apacer
-* Sandisk
+* AData Industrial
+* AData Industrial by Transcend
+* Apacer Industrial
+* Sandisk/WD Industrial
 * Longsys M9H
 * Longsys MPS
-* Micron
-* Swissbit
-* Transcend
+* Micron Industrial
+* Swissbit Industrial
+* Transcend Industrial
+* ATP Industrial
+* Delkin Industrial(Apacer protocol)
+* Some Phison-based UHS-II microSD cards(Apacer protocol, Sandisk and Lexer tested)
 
 Tested on:
 
@@ -49,7 +52,7 @@ sudo ./sdinsight
 
 ## Examples
 
-### Hikvision longsys MPS
+### Hikvision H1 (MLC labelled)
 
 ```
 /dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:59b4"
@@ -101,7 +104,7 @@ Product number: C1f30p       SDSA08G
 SN: C5 77 3C D0 01 2A
 ```
 
-### Sandisk UHS-II(maybe fake?)
+### Sandisk Extreme PRO microSD UHS-II
 
 ```
 /dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:0007"
