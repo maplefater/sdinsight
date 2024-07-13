@@ -6,8 +6,6 @@ Just another SD/TF card CID & SMART reader.
 
 SMART supported card type:
 
-* AData Industrial
-* AData Industrial by Transcend
 * Apacer Industrial
 * Sandisk/WD Industrial
 * Longsys M9H
@@ -16,8 +14,15 @@ SMART supported card type:
 * Swissbit Industrial
 * Transcend Industrial
 * ATP Industrial
-* Delkin Industrial(Apacer protocol)
-* Some Phison-based UHS-II microSD cards(Apacer protocol, Sandisk and Lexer tested)
+* AData Industrial
+* AData Industrial made by Transcend (old Transcend protocol)
+* Delkin Industrial (Apacer protocol)
+* Some Phison-based UHS-II microSD cards (Apacer protocol, Sandisk and Lexer tested)
+* Metorage Industrial (Apacer protocol, MITF tested)
+* Kingston Industrial (Apacer protocol, SDCIT/SDCIT2 tested)
+* Hikvision H1 series (Longsys protocol, MLC labelled on the front)
+* Some unv cards (Longsys protocol)
+* PNY ELITE U1 (AData protocol)
 
 Tested on:
 
@@ -52,7 +57,7 @@ sudo ./sdinsight
 
 ## Examples
 
-### Hikvision H1 (MLC labelled)
+### Hikvision H1
 
 ```
 /dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:59b4"
@@ -154,5 +159,7 @@ https://github.com/CTCaer/hekate
 https://github.com/transcend-information/RaspberryPi_NVIDIAJetson-SDcard-SMARTQuery
 
 https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git
+
+https://github.com/ugurkrl/SDeMMCHealth
 
 特别感谢 `hhdjz13813` 在开发过程中提供的帮助。
