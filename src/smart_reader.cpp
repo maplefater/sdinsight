@@ -37,6 +37,7 @@ bool readSmart(MMCutils &mmc_utils) {
                        SmartReaderSwissbit,
                        SmartReaderAdataByTranscend,
                        SmartReaderLongsysM9H,
-                       SmartReaderATP,
-                       SmartReaderApacer /* should be last one, to reduce execution time */>{}(mmc_utils);
+                       // SmartReaderATP,
+                       SmartReaderApacer /* should be last one, to reduce execution time */
+		>{}(mmc_utils);
 }

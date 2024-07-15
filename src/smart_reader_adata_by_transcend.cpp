@@ -16,7 +16,7 @@ bool SmartReaderAdataByTranscend::readSmart(MMCutils &mmc_utils) {
     printf("Total Bad Block Count: %d\n",
            mmc_utils.bytes_to_int(data_in[32], data_in[33], data_in[34],
                                   data_in[35]));
-    printf("Spare Block Rate: %f%%",
+    printf("Spare Block Rate: %f%%\n",
            ((float)((((unsigned int)data_in[64]) << 8) |
                     ((unsigned int)data_in[65]))));
     printf("Total Erase Count: %d\n",

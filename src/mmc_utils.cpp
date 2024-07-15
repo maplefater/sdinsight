@@ -169,7 +169,7 @@ static std::string get_manufacturer(int manid, char *oemid) {
   case 0x22:
     return "Dahua";
   case 0x27:
-    return "Delkin/Phison";
+    return "Delkin/Phison/Apacer";
   case 0x28:
     return "Barun Electronics/Lexar";
 
@@ -193,7 +193,7 @@ static std::string get_manufacturer(int manid, char *oemid) {
   case 0x73:
     return "Bongiovi";
   case 0x74:
-    return "Jiaelec/Transcend";
+    return "Jiaelec/Transcend/Silicon Power";
   case 0x76:
     return "Patriot";
   case 0x82:
@@ -206,7 +206,7 @@ static std::string get_manufacturer(int manid, char *oemid) {
     if (!memcmp(oemid, "OS", 2))
       return "Sony"; // SO.
     else if (!memcmp(oemid, "SO", 2))
-      return "Hikvision";
+      return "Hikvision/Longsys";
     else
       return "Barun Electronics"; // BE.
   case 0x9F:

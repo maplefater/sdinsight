@@ -13,9 +13,9 @@ SMART supported card type:
 * Micron Industrial
 * Swissbit Industrial
 * Transcend Industrial
-* ATP Industrial
 * AData Industrial
 * AData Industrial made by Transcend (old Transcend protocol)
+* Streamax Industrial (Longsys protocol)
 * Delkin Industrial (Apacer protocol)
 * Some Phison-based UHS-II microSD cards (Apacer protocol, Sandisk and Lexer tested)
 * Metorage Industrial (Apacer protocol, MITF tested)
@@ -109,7 +109,7 @@ Product number: C1f30p       SDSA08G
 SN: C5 77 3C D0 01 2A
 ```
 
-### Sandisk Extreme PRO microSD UHS-II
+### Sandisk Extreme PRO microSD UHS-II 64GB
 
 ```
 /dev/mmcblk0 device bus: "/sys/bus/mmc/devices/mmc0:0007"
