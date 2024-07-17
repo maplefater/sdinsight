@@ -142,7 +142,8 @@ static std::string get_manufacturer(int manid, char *oemid) {
     return "Silicon Power";
   case 0x09:
     return "ATP";
-
+  case 0x12:
+    return "Samsung";
   case 0x13:
     return "Kingmax";
 
@@ -225,7 +226,7 @@ char *to_binstr(char *hexstr) {
       "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111",
   };
   char *binstr, *tail;
-
+  std::cout << "size: " << strlen(hexstr) * 4 + 1 << std::endl;
   binstr = (char *)calloc(strlen(hexstr) * 4 + 1, sizeof(char));
   if (!binstr)
     return NULL;
@@ -340,8 +341,8 @@ void print_sd_cid(char *cid) {
   unsigned int mdt_year;
   unsigned int crc;
   auto parse_format = "8u16a40a4u4u32u4r8u4u7u1r";
-  parse_bin(cid, parse_format, &mid, &oid[0], &pnm[0],
-            &hwrev, &fwrev, &psn, &mdt_year, &mdt_month, &crc);
+  parse_bin(cid, parse_format, &mid, &oid[0], &pnm[0], &hwrev, &fwrev, &psn,
+            &mdt_year, &mdt_month, &crc);
 
   oid[2] = '\0';
   pnm[5] = '\0';
@@ -402,4 +403,37 @@ char *read_file(const char *name) {
 void MMCutils::printCid() {
   auto *cid = read_file((m_bus_folder / "cid").c_str());
   print_sd_cid(cid);
+}
+
+void MMCutils::printExtCsd() {
+  char ext_csd[512], ext_csd_rev;
+  int ret;
+  struct mmc_ioc_cmd idata;
+  memset(&idata, 0, sizeof(idata));
+  memset(ext_csd, 0, sizeof(char) * 512);
+  idata.write_flag = 0;
+  idata.opcode = MMC_SEND_EXT_CSD;
+  idata.arg = 0;
+  idata.flags = MMC_RSP_SPI_R1 | MMC_RSP_R1 | MMC_CMD_ADTC;
+  idata.blksz = 512;
+  idata.blocks = 1;
+  mmc_ioc_cmd_set_data(idata, ext_csd);
+
+  ret = ioctl(m_fd, MMC_IOC_CMD, &idata);
+  if (ret < 0) {
+    std::cout << "read ext_csd failed: " << strerror(errno) << std::endl;
+    return;
+  }
+
+  ext_csd_rev = ext_csd[EXT_CSD_REV];
+  printf("EXT_CSD_REV: %d\n", (int)ext_csd_rev);
+  if (ext_csd_rev >= 7) {
+    printf("EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_A: 0x%02x\n",
+           ext_csd[EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_A]);
+    printf("EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_B: 0x%02x\n",
+           ext_csd[EXT_CSD_DEVICE_LIFE_TIME_EST_TYP_B]);
+    printf("EXT_CSD_PRE_EOL_INFO: 0x%02x\n", ext_csd[EXT_CSD_PRE_EOL_INFO]);
+  } else {
+    std::cout << "EXT_CSD: no life time info." << std::endl;
+  }
 }

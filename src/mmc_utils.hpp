@@ -17,6 +17,7 @@ private:
 public:
   MMCutils();
   void printCid();
+  void printExtCsd();
   std::vector<uint8_t> CMD56_read(int arg);
 
   int CMD56_write(int arg);
