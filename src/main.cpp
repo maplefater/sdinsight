@@ -17,6 +17,6 @@ int main() {
   std::cout << "====================smi flash id====================" << std::endl;
   printSmiFlashId();
   std::cout << "====================SMART info====================" << std::endl;
-  // readSmart(mmc_utils);
+  readSmart(mmc_utils);
   return 0;
 }
