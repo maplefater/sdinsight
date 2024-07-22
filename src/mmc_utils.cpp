@@ -74,7 +74,7 @@ int MMCutils::CMD56_write(int arg) {
 MMCutils::MMCutils() {
   m_fd = open("/dev/mmcblk0", O_RDWR);
   if (m_fd < 0) {
-    std::cout << "open device failed: " << strerror(errno);
+    std::cout << "open device failed: " << strerror(errno) << std::endl;
     exit(1);
   }
   // for some reason, cid and csd can't be retrieved from /dev/mmcblk0
@@ -226,7 +226,6 @@ char *to_binstr(char *hexstr) {
       "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111",
   };
   char *binstr, *tail;
-  std::cout << "size: " << strlen(hexstr) * 4 + 1 << std::endl;
   binstr = (char *)calloc(strlen(hexstr) * 4 + 1, sizeof(char));
   if (!binstr)
     return NULL;
