@@ -15,8 +15,9 @@ endif()
 file(GLOB src_files
      src/*.cpp)
 
+
 add_definitions(-fno-omit-frame-pointer)
 add_executable(sdinsight ${src_files})
-target_include_directories(sdinsight PRIVATE third_party src/)
+target_include_directories(sdinsight PRIVATE third_party/ third_party/magic_enum-v0.9.6/include/ src/)
 target_link_libraries(sdinsight PRIVATE stdc++_libbacktrace)
 target_link_options(sdinsight PRIVATE -static-libgcc -static-libstdc++ -static)

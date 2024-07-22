@@ -12,8 +12,8 @@ int main() {
   MMCutils mmc_utils{};
   std::cout << "====================CID info====================" << std::endl;
   mmc_utils.printCid();
-  std::cout << "====================EXT CSD info====================" << std::endl;
-  mmc_utils.printExtCsd();
+  // std::cout << "====================EXT CSD info====================" << std::endl;
+  // mmc_utils.printExtCsd();
   std::cout << "====================smi flash id====================" << std::endl;
   printSmiFlashId();
   std::cout << "====================SMART info====================" << std::endl;

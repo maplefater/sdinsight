@@ -405,6 +405,7 @@ void MMCutils::printCid() {
   print_sd_cid(cid);
 }
 
+[[maybe_unused]]
 void MMCutils::printExtCsd() {
   char ext_csd[512], ext_csd_rev;
   int ret;
